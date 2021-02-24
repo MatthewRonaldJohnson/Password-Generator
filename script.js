@@ -70,16 +70,28 @@ var possibleChars = [
   "~",
 ];
 
+var passwordLength = 10;
+
+var generatedPW = [0]
+
+var random = 0;
+
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
 }
 
-var pull = getRandomInt(0,68);
+for (i=0; i < passwordLength; i++){
+  random = getRandomInt(0, 68);
+  generatedPW[i] = possibleChars[random];
+}
 
-console.log(possibleChars[pull]);
+console.log(generatedPW)
 
+for (y=0; y < generatedPW.length; y++){
+  console.log(generatedPW[y]);
+}
 
 
 
