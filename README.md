@@ -25,12 +25,16 @@ Assuming the password length was valid and at least one character list was selec
 
 You can then click the button again to generate another password, this will remove the previously generated one from the screen.
 
-## Resources 
+## Resources I used when Building this Application
 
 MDN Page on Math.random(): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 
 MDN Page on Array.protoype.flat(): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat
 
+MDN Page on Number.isInteger(): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger
+
 Javascript.info page on alert, prompt, and confirm: https://javascript.info/alert-prompt-confirm
+
+Go Make Things page on converting strings to numbers: https://gomakethings.com/converting-strings-to-numbers-with-vanilla-javascript/
 
 w3schools page on onclick events: https://www.w3schools.com/jsref/event_onclick.asp
