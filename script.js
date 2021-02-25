@@ -103,6 +103,12 @@ var accetedArrays = [];
 //needs to be an interger between 8 and 128
 var passwordLength = 15;
 
+
+//Checks that user entered passwordLength is between 8 & 128 and is an interger 
+if (passwordLength >= 8 && passwordLength <= 128 && Number.isInteger(passwordLength)){
+  console.log("true");
+}
+
 //Array that will hold generated password
 var generatedPW = [0];
 
