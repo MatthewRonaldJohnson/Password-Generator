@@ -111,37 +111,37 @@ function generatePW() {
 
   //Gets a length value from the user
   passwordLength = prompt(                
-    "Enter your desired password length(must be an interger between 8 and 128",
+    "Enter your desired password length (must be an interger between 8 and 128)",
     passwordLength
   ); 
 
   //checks the user input to see if it meets the criteria, it not ends the function
   if (!(passwordLength >= 8 && passwordLength <= 128)) {
-    alert("Password Length must be an interger between 8 and 128!");
+    alert("Password Length must be an interger between 8 and 128! Try again");
     return;
   }
 
   //ask user if they want to use a character list, if so adds it to the accetedArrays
-  numBool = confirm("Do you want your password to contain numbers?");
+  numBool = confirm("Do you want your password to be able to have numbers?");
   if (numBool) {
     accetedArrays.push(numberArray);
   }
-  underBool = confirm("Do you want your password to contain lowercase letters?");
+  underBool = confirm("Do you want your password to be able to have lowercase letters?");
   if (underBool) {
     accetedArrays.push(undercaseArray);
   }
-  upperBool = confirm("Do you want your password to contain uppercase letters?");
+  upperBool = confirm("Do you want your password to be able to have uppercase letters?");
   if (upperBool) {
     accetedArrays.push(uppercaseArray);
   }
-  specBool = confirm("Do you want your password to contain special characters");
+  specBool = confirm("Do you want your password to be able to have special characters");
   if (specBool) {
     accetedArrays.push(specArray);
   }
 
   //checks that at least one char list has been selected, if accetedArrays is undefined or has no length it will end the function
   if (accetedArrays === undefined || accetedArrays.length === 0) {
-    alert("You must select at least one of the character list");
+    alert("Your password must be able to have at least one of numbers, lowercase letters, uppercase letters, or special characters! Try again.");
     return;
   }
 
