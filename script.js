@@ -104,64 +104,55 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 
+//generates and prints out password
 function generatePW() {
   document.getElementById("password").innerHTML = ""; //this line clears out the previously generated password
   accetedArrays = []; //this line empties the accepted arrays when generating a new password
-  passwordLength = prompt(
+
+  //Gets a length value from the user
+  passwordLength = prompt(                
     "Enter your desired password length(must be an interger between 8 and 128",
     passwordLength
-  );
+  ); 
+
+  //checks the user input to see if it meets the criteria, it not ends the function
   if (!(passwordLength >= 8 && passwordLength <= 128)) {
     alert("Password Length must be an interger between 8 and 128!");
     return;
   }
 
+  //ask user if they want to use a character list, if so adds it to the accetedArrays
   numBool = confirm("Do you want your password to contain numbers?");
   if (numBool) {
     accetedArrays.push(numberArray);
   }
-
   underBool = confirm("Do you want your password to contain lowercase letters?");
   if (underBool) {
     accetedArrays.push(undercaseArray);
   }
-
   upperBool = confirm("Do you want your password to contain uppercase letters?");
   if (upperBool) {
     accetedArrays.push(uppercaseArray);
   }
-
   specBool = confirm("Do you want your password to contain special characters");
   if (specBool) {
     accetedArrays.push(specArray);
   }
 
+  //checks that at least one char list has been selected, if accetedArrays is undefined or has no length it will end the function
   if (accetedArrays === undefined || accetedArrays.length === 0) {
     alert("You must select at least one of the character list");
     return;
   }
+
+  //step that actually generates the password, storing it as an array in generatedPW
   for (i = 0; i < passwordLength; i++) {
     random = getRandomInt(accetedArrays.flat().length);
     generatedPW[i] = accetedArrays.flat()[random];
   }
-  //loop that prints out PW in the #password textarea
+
+  //prints out password in the textarea of the document
   for (i = 0; i < generatedPW.length; i++) {
     document.getElementById("password").append(generatedPW[i]);
   }
 }
-
-//generatePW(); // need to call this function when generate password is pressed
-
-// //starter code
-// var generateBtn = document.querySelector("#generate");
-
-// // Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
-
-//   passwordText.value = password;
-// }
-
-// // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
