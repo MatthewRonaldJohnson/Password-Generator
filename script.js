@@ -1,4 +1,4 @@
-//Arrays used to generate list of acceptable characters 
+//Arrays used to generate list of acceptable characters
 var numberArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 var undercaseArray = [
   "a",
@@ -91,18 +91,16 @@ var specArray = [
 ];
 
 //Variables that hold boolean values based on user inputs for what chars list to use
-var numBool = false;
-var underBool = true;
-var upperBool = true;
+var numBool = true;
+var underBool = false;
+var upperBool = false;
 var specBool = false;
 
 //Array that will contain the arrays the user wants to get chars from
-var accetedArrays = []
+var accetedArrays = [];
 
-//Array that will contain acceptable characters for password
-var charList= []
-
-//Variable that takes user input to define length of password 
+//Variable that takes user input to define length of password
+//needs to be an interger between 8 and 128
 var passwordLength = 15;
 
 //Array that will hold generated password
@@ -122,18 +120,14 @@ if (specBool) {
   accetedArrays.push(specArray);
 }
 
-//Fills out charList array 
-charList = accetedArrays.flat();
-
+//code used from MDN page on Math.random (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
 function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
   return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
 }
 
 for (i = 0; i < passwordLength; i++) {
-  random = getRandomInt(0, charList.length);
-  generatedPW[i] = charList[random];
+  random = getRandomInt(0, accetedArrays.flat().length);
+  generatedPW[i] = accetedArrays.flat()[random];
 }
 
 console.log(generatedPW);
