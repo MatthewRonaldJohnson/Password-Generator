@@ -92,16 +92,16 @@ var specArray = [
 
 //Variables that hold boolean values based on user inputs for what chars list to use
 var numBool = true;
-var underBool = false;
-var upperBool = false;
-var specBool = false;
+var underBool = true;
+var upperBool = true;
+var specBool = true;
 
 //Array that will contain the arrays the user wants to get chars from
 var accetedArrays = [];
 
 //Variable that takes user input to define length of password
 //needs to be an interger between 8 and 128
-var passwordLength = 15;
+var passwordLength = 20;
 
 
 //Checks that user entered passwordLength is between 8 & 128 and is an interger 
@@ -126,13 +126,13 @@ if (specBool) {
   accetedArrays.push(specArray);
 }
 
-//code used from MDN page on Math.random (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+//function that generates a random integer between 0 and max value (inclusive of 0 and exclusive of max)
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
 }
 
 for (i = 0; i < passwordLength; i++) {
-  random = getRandomInt(0, accetedArrays.flat().length);
+  random = getRandomInt(accetedArrays.flat().length);
   generatedPW[i] = accetedArrays.flat()[random];
 }
 
