@@ -7,19 +7,19 @@ Webpage is deployed [here](https://matthewronaldjohnson.github.io/Password-Gener
 
 On loading Website will look like this
 
-![default view](./assets/img/Default-Screen.png)
+![default view] (./assets/img/Default-Screen.png)
 
 Upon clicking the generate password button you will be given this prompt
 
-![password length prompt](./assets/img/passWordLength.png)
+![password length prompt] (./assets/img/passWordLength.png)
 
 Once you input your desire password length you will get 4 prompts asking which character sets you want included in possible pieces of the password
 
-![Character List select prompt](./assets/img/char-list-select.png)
+![Character List select prompt] (./assets/img/char-list-select.png)
 
 Assuming the password length was valid and at least one character list was selected, the password would then display in the box. 
 
-![Generated Password Example](./assets/img/generated-password.png)
+![Generated Password Example] (./assets/img/generated-password.png)
 
 You can then click the button again to generate another password, this will remove the previously generated one from the screen.
 
