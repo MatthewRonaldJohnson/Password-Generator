@@ -135,12 +135,11 @@ function generatePW () {
   }
   //loop that prints out PW in the #password textarea
   for (i = 0; i < generatedPW.length; i++) {
-  console.log(generatedPW[i]);
   document.getElementById("password").append(generatedPW[i]);
   }
 }
 
-generatePW();
+//generatePW(); // need to call this function when generate password is pressed
 
 
 
