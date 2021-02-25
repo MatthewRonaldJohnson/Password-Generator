@@ -116,7 +116,8 @@ function generatePW() {
   ); 
 
   //checks the user input to see if it meets the criteria, it not ends the function
-  if (!(passwordLength >= 8 && passwordLength <= 128)) {
+  //checks that the length is 8 or more, is 128 or less, and converts the string entered from the user to a number then makes sure that number is an interger
+  if (!(passwordLength >= 8 && passwordLength <= 128 && Number.isInteger(Number(passwordLength)))) {
     alert("Password Length must be an interger between 8 and 128! Try again");
     return;
   }
