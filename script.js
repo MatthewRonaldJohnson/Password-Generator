@@ -14,6 +14,7 @@ var undercaseArray = [
   "k",
   "l",
   "m",
+  "n",
   "o",
   "p",
   "q",
@@ -41,6 +42,7 @@ var uppercaseArray = [
   "K",
   "L",
   "M",
+  "N",
   "O",
   "P",
   "Q",
@@ -102,30 +104,39 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 
-function generatePW () {
+function generatePW() {
   document.getElementById("password").innerHTML = ""; //this line clears out the previously generated password
-  passwordLength = prompt ("Enter your desired password length(must be an interger between 8 and 128", passwordLength);
-  if (!(passwordLength >= 8 && passwordLength <= 128)){
+  accetedArrays = []; //this line empties the accepted arrays when generating a new password
+  passwordLength = prompt(
+    "Enter your desired password length(must be an interger between 8 and 128",
+    passwordLength
+  );
+  if (!(passwordLength >= 8 && passwordLength <= 128)) {
     alert("Password Length must be an interger between 8 and 128!");
     return;
   }
+
   numBool = confirm("Do you want your password to contain numbers?");
-  underBool = confirm("Do you want your password to contain lowercase letters?");
-  upperBool = confirm("Do you want your password to contain uppercase letters?");
-  specBool = confirm("Do you want your password to contain special characters");
   if (numBool) {
     accetedArrays.push(numberArray);
   }
+
+  underBool = confirm("Do you want your password to contain lowercase letters?");
   if (underBool) {
     accetedArrays.push(undercaseArray);
   }
+
+  upperBool = confirm("Do you want your password to contain uppercase letters?");
   if (upperBool) {
     accetedArrays.push(uppercaseArray);
   }
+
+  specBool = confirm("Do you want your password to contain special characters");
   if (specBool) {
     accetedArrays.push(specArray);
   }
-  if (accetedArrays === undefined || accetedArrays.length === 0){
+
+  if (accetedArrays === undefined || accetedArrays.length === 0) {
     alert("You must select at least one of the character list");
     return;
   }
@@ -135,13 +146,11 @@ function generatePW () {
   }
   //loop that prints out PW in the #password textarea
   for (i = 0; i < generatedPW.length; i++) {
-  document.getElementById("password").append(generatedPW[i]);
+    document.getElementById("password").append(generatedPW[i]);
   }
 }
 
 //generatePW(); // need to call this function when generate password is pressed
-
-
 
 // //starter code
 // var generateBtn = document.querySelector("#generate");
