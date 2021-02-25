@@ -1,6 +1,8 @@
 # Password-Generator
 Homework 3: Password Generator made with Javascript
 
+Goal: Make a password generator with Javascript. The generator should take user inputs to set the length of the generator password and let the user select what types of characters to be included. 
+
 Webpage is deployed [here](https://matthewronaldjohnson.github.io/Password-Generator/).
 
 ## Funactionality 
