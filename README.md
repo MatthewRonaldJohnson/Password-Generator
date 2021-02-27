@@ -5,6 +5,8 @@ Goal: Make a password generator with Javascript. The generator should take user 
 
 Webpage is deployed [here](https://matthewronaldjohnson.github.io/Password-Generator/).
 
+An alternative version where user input is taken in through the page without the use of prompts is stored in the 'Checkbox-Version' branch. 
+
 ## Funactionality 
 
 On loading Website will look like this
