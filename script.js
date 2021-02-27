@@ -106,16 +106,14 @@ function getRandomInt(max) {
 
 //generates and prints out password
 function generatePW() {
+  debugger
   document.getElementById("password").innerHTML = ""; //this line clears out the previously generated password
   accetedArrays = []; //this line empties the accepted arrays when generating a new password
 
   //Gets a length value from the user
-  passwordLength = prompt(                
-    "Enter your desired password length (must be an interger between 8 and 128)",
-    passwordLength
-  ); 
+  passwordLength = document.getElementById("length").value;
+  console.log(passwordLength);
 
-  //checks the user input to see if it meets the criteria, it not ends the function
   //checks that the length is 8 or more, is 128 or less, and converts the string entered from the user to a number then makes sure that number is an interger
   if (!(passwordLength >= 8 && passwordLength <= 128 && Number.isInteger(Number(passwordLength)))) {
     alert("Password Length must be an interger between 8 and 128! Try again");
@@ -123,19 +121,19 @@ function generatePW() {
   }
 
   //ask user if they want to use a character list, if so adds it to the accetedArrays
-  numBool = confirm("Do you want your password to be able to have numbers?");
+  numBool = document.getElementById("num").checked;
   if (numBool) {
     accetedArrays.push(numberArray);
   }
-  underBool = confirm("Do you want your password to be able to have lowercase letters?");
+  underBool = document.getElementById("lower").checked;
   if (underBool) {
     accetedArrays.push(undercaseArray);
   }
-  upperBool = confirm("Do you want your password to be able to have uppercase letters?");
+  upperBool = document.getElementById("upper").checked;
   if (upperBool) {
     accetedArrays.push(uppercaseArray);
   }
-  specBool = confirm("Do you want your password to be able to have special characters");
+  specBool = document.getElementById("special").checked;
   if (specBool) {
     accetedArrays.push(specArray);
   }
