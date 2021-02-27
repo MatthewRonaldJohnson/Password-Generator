@@ -17,22 +17,28 @@
           <h2>Generate a Password</h2>
         </div>
 
-        <div>
-          <input type="checkbox" id="num" value="true"/>
-          <label for="num">Numbers?</label>
-        </div>
-        <div>
-          <input type="checkbox" id="lower" value="true"/>
-          <label for="lower">Lowercase?</label>
-        </div>
-        <div>
-          <input type="checkbox" id="upper" value="true"/>
-          <label for="upper">Upper?</label>
-        </div>
-        <div>
-          <input type="checkbox" id="special" value="true"/>
-          <label for="special">Special?</label>
-        </div>
+        <form>
+          <div>
+            <label for="PWLength">How many characters should the password include:</label>
+            <input type="number" id="PWLength"/>
+          </div>
+          <div>
+            <input type="checkbox" id="num" value="true" checked />
+            <label for="num">Numbers?</label>
+          </div>
+          <div>
+            <input type="checkbox" id="lower" value="true" />
+            <label for="lower">Lowercase?</label>
+          </div>
+          <div>
+            <input type="checkbox" id="upper" value="true" />
+            <label for="upper">Upper?</label>
+          </div>
+          <div>
+            <input type="checkbox" id="special" value="true" />
+            <label for="special">Special?</label>
+          </div>
+        </form>
 
         <div class="card-body">
           <textarea
